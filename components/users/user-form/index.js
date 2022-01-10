@@ -19,7 +19,7 @@ export const UserForm = ({ form, title, onSave, row = [] }) => {
       <Typography.Title level={5}>
         {title}
       </Typography.Title>
-      <Space direction="vertical" align="end">
+      <Space direction="vertical">
         <Form.Item
           name="name"
           label="Nombre"
