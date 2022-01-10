@@ -5,6 +5,12 @@
 .ant-layout-content
   padding: 1rem
 
+  .ant-col
+    @media (max-width: 425px)
+      width: 15rem
+      display: flex
+      justify-content: center
+
 .ant-popover
   @media (max-width: 720px)
     max-width: 15rem
@@ -15,3 +21,7 @@
 
     @media (max-width: 720px)
       width: 100%
+
+.create-user-popover
+  @media (max-width: 425px)
+    width: 15rem
