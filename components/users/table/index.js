@@ -1,11 +1,31 @@
-import {Button, Space, Table, Popover, Row} from "antd";
+import {Button, Space, Table, Popover} from "antd";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons"
 import {TitleTable} from "./title-table";
 import {UserForm} from "../user-form";
+import {UserTasks} from "./user-tasks";
 
-export const UsersTable = ({ data, handleEdit, handleDeleteUser, handleCreate, createForm, editForm }) => (
+export const UsersTable = ({
+  data,
+  editForm,
+  handleEdit,
+  createForm,
+  handleCreate,
+  handleDeleteUser,
+  handleDeleteTask,
+  handleUpdateTask,
+  handleCreateTask
+}) => (
   <Table
     dataSource={data}
+    expandable={{
+      expandedRowRender: row =>
+        <UserTasks
+          user={ row }
+          handleDeleteTask={handleDeleteTask}
+          handleUpdateTask={handleUpdateTask}
+          handleCreateTask={handleCreateTask}
+        />
+    }}
     title={() => (
       <TitleTable handleCreate={handleCreate} form={createForm}/>
     )}
