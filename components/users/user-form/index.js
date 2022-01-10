@@ -19,18 +19,18 @@ export const UserForm = ({ form, title, onSave, row = [] }) => {
       <Typography.Title level={5}>
         {title}
       </Typography.Title>
-      <Space direction="vertical" align="end">
+      <Space direction="vertical">
         <Form.Item
           name="name"
           label="Nombre"
           rules={[{ required: true, message: "Favor de ingresar su nombre" }]}>
-          <Input />
+          <Input className="form-input" />
         </Form.Item>
         <Form.Item
           name="contact"
           label="Número de telefono"
           rules={[{ required: true, message: 'Favor de ingresar su número' }]}>
-          <Input type="number" />
+          <Input type="number" className="form-input" />
         </Form.Item>
         <Form.Item>
           <Button htmlType="submit" danger>Guardar</Button>
